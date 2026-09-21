@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="costo"/>
+        <attribute name="authors" value="79345381"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-21 04:21:15 "/>
+        <attribute name="created" value="NzkzNDUzODE7SU5GTzA1UEMyMjsyMDI2LTA5LTIxOyIwOTowMjoxNSAiOzIyNjY="/>
+        <attribute name="edited" value="NzkzNDUzODE7SU5GTzA1UEMyMjsyMDI2LTA5LTIxOyIwOTo1MDowNSAiOzE7MjM3Ng=="/>
+        <attribute name="edited" value="bWFyY287TEFQVE9QLU9DNjdEUlNUOzIwMjYtMDktMjE7IjA0OjIxOjE1ICI7MjsyOTEw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="calcolo del costo di una spedizione"/>
+            <declare name="peso, distanza, costo, c, soglia1, soglia2, cn1, cn2, cn3, cu1, cu2, cu3" type="Real" array="False" size=""/>
+            <declare name="classe" type="String" array="False" size=""/>
+            <comment text="assegnazione soglie"/>
+            <assign variable="soglia1" expression="100"/>
+            <assign variable="soglia2" expression="500"/>
+            <comment text="assegnazione costi normali e urgenti"/>
+            <assign variable="cn1" expression="1"/>
+            <assign variable="cn2" expression="2"/>
+            <assign variable="cn3" expression="1.5"/>
+            <assign variable="cu1" expression="1.5"/>
+            <assign variable="cu2" expression="3"/>
+            <assign variable="cu3" expression="2"/>
+            <output expression="&quot;classe NORMALE o URGENTE&quot;" newline="True"/>
+            <input variable="classe"/>
+            <comment text="ciclo di controllo"/>
+            <while expression="classe != &quot;NORMALE&quot; and classe != &quot;URGENTE&quot;">
+                <output expression="&quot;Errore: assegna NORMALE o URGENTE&quot;" newline="True"/>
+                <input variable="classe"/>
+            </while>
+            <output expression="&quot;peso in kg&quot;" newline="True"/>
+            <input variable="peso"/>
+            <output expression="&quot;distanza in km&quot;" newline="True"/>
+            <input variable="distanza"/>
+            <if expression="classe = &quot;NORMALE&quot;">
+                <then>
+                    <if expression="distanza &lt; soglia1">
+                        <then>
+                            <assign variable="c" expression="cn1"/>
+                        </then>
+                        <else>
+                            <if expression="distanza &gt; soglia2">
+                                <then>
+                                    <assign variable="c" expression="cn2"/>
+                                </then>
+                                <else>
+                                    <assign variable="c" expression="cn3"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="distanza &lt; soglia1">
+                        <then>
+                            <assign variable="c" expression="cu1"/>
+                        </then>
+                        <else>
+                            <if expression="distanza &gt; soglia2">
+                                <then>
+                                    <assign variable="c" expression="cu2"/>
+                                </then>
+                                <else>
+                                    <assign variable="c" expression="cu3"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <comment text="formula del costo"/>
+            <assign variable="costo" expression="c * peso"/>
+            <output expression="&quot;costo &quot; &amp; costo" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
