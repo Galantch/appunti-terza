@@ -4,10 +4,10 @@
         <attribute name="name" value="costo"/>
         <attribute name="authors" value="79345381"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-09-21 04:21:15 "/>
+        <attribute name="saved" value="2026-09-21 04:54:20 "/>
         <attribute name="created" value="NzkzNDUzODE7SU5GTzA1UEMyMjsyMDI2LTA5LTIxOyIwOTowMjoxNSAiOzIyNjY="/>
         <attribute name="edited" value="NzkzNDUzODE7SU5GTzA1UEMyMjsyMDI2LTA5LTIxOyIwOTo1MDowNSAiOzE7MjM3Ng=="/>
-        <attribute name="edited" value="bWFyY287TEFQVE9QLU9DNjdEUlNUOzIwMjYtMDktMjE7IjA0OjIxOjE1ICI7MjsyOTEw"/>
+        <attribute name="edited" value="bWFyY287TEFQVE9QLU9DNjdEUlNUOzIwMjYtMDktMjE7IjA0OjU0OjIwICI7MzsyOTEz"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -25,6 +25,7 @@
             <assign variable="cu1" expression="1.5"/>
             <assign variable="cu2" expression="3"/>
             <assign variable="cu3" expression="2"/>
+            <comment text="letture classe, peso, distanza"/>
             <output expression="&quot;classe NORMALE o URGENTE&quot;" newline="True"/>
             <input variable="classe"/>
             <comment text="ciclo di controllo"/>
