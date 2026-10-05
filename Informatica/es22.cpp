@@ -1,5 +1,8 @@
-/*Gli abbonamenti alla metropolitana di Roma possono essere settimanali (S),
-mensili (M)*/
+/*
+Gli abbonamenti alla metropolitana di Roma possono essere settimanali (S),
+mensili (M) o annuali (A) e valgono per la sola zona centrale (tipo 1), per la sola zona
+periferica (tipo 2) o per entrambe le zone (tipo 3).
+*/
 #include<iostream>
 using namespace std;
 int main(){
@@ -48,7 +51,7 @@ int main(){
         cin >> tipo;
     }
 
-    // priorità desiderata
+    // prioritï¿½ desiderata
 
     cout << "Inserire la priorita desiderata: A - Alta Priorita (consente di viaggiare nelle ore di punta) | B - Bassa priorita (non consente di viaggiare nelle ore di punta)" << endl;
     cin >> priorita;
@@ -57,7 +60,7 @@ int main(){
 
     while(priorita != 'A' && priorita != 'B'){
 
-        cout << "Errore, si deve inserire: A - Alta Priorità (consente di viaggiare nelle ore di punta) | B - Bassa priorità (non consente di viaggiare nelle ore di punta)" << endl;
+        cout << "Errore, si deve inserire: A - Alta Prioritï¿½ (consente di viaggiare nelle ore di punta) | B - Bassa prioritï¿½ (non consente di viaggiare nelle ore di punta)" << endl;
         cin >> priorita;
     }
 
