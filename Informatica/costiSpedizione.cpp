@@ -14,6 +14,8 @@ int main()
     char classe;
     // variabile intermedia - costo previsto associato distanza / classe
     double costo;
+    int n;
+    int conta;
     // caricamento modello
     distanza1=100;
     distanza2=500;
@@ -24,13 +26,16 @@ int main()
     costoN2=1.5;
     costoN3=2.0;
     sogliaPeso=100.0;
-    // determino il costo per n clienti
-    int n=6;
-    int i;
-    i=1;
+
+    // richiesta numero clienti
+    cout << "quanti clienti hanno preso appuntamento oggi ?"<<endl;
+    cin >>n;
+    // azzero variabili accumulatore e/o contatore
+    conta=0;
     ricavoGiornata=0;
-    while(i<n){
-        cout<<"Non si possono spedire pacchi superiori a "<< sogliaPeso<<endl;
+    for(int i=1; i<n; i++){
+        cout<<"Cliente "<< i<<endl;
+        cout<<"Non si possono spedire pacchi con peso superiore a Kg "<< sogliaPeso<<endl;
         cout<<"Digita S se vuoi continuare - N se vuoi interrompere "<<  endl;
         cin>> scelta;
         while(scelta != 'N' && scelta != 'S'){
@@ -38,14 +43,12 @@ int main()
             cin>>scelta;
         }
     if(scelta!='N'){
-        cout<<"Digita peso pacco in Kg: sono accettate soltanto spedizioni con peso inferiore a "<<sogliaPeso<<endl;
-        cin>>peso;
+
         // controllo input
-        while(peso>sogliaPeso){
-            cout<<"peso errato non può essere superiore a "<<sogliaPeso <<endl;
-            cout<<"Digita peso pacco in Kg: sono accettate soltanto spedizioni con peso inferiore a "<<sogliaPeso<<endl;
+        do{
+            cout<<"Digita peso pacco in Kg: sono accettate soltanto spedizioni con peso inferiore a"<<sogliaPeso<<endl;
             cin>>peso;
-            }
+            } while(peso>sogliaPeso);
         cout<<"Digita distanza in Km "<<endl;
         cin>>distanza;
         cout<<"Digita N spedizione normale - U spedizione urgente "<<endl;
@@ -86,11 +89,12 @@ int main()
      }
     // cout<<" costo per kg associato distanza / classe "<< costo<<endl;
     costoTot= peso * costo;
-    cout<< "costo totale "<<costoTot;
-    ricavoGiornata=ricavoGiornata + costoTot;
+    cout<< "costo totale "<<costoTot<<endl;
+    conta++;
+    ricavoGiornata+=costoTot;
     }
-    i++;
 }
     cout<< " ricavo giornata " << ricavoGiornata;
+    cout<< " numero clienti giornata "<<conta<<endl;
     return 0;
 }
