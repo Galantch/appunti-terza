@@ -7,10 +7,10 @@ Tipo | Settimanale | Mensile | Annuale
 1 | 10 | 30 | 250
 2 | 5 | 20 | 150
 3 | 15 | 40 | 300
-Gli abbonamenti che non consentono di viaggiare nelle ore di punta (bassa prioritÃ )
+Gli abbonamenti che non consentono di viaggiare nelle ore di punta (bassa priorità)
 hanno una riduzione del 20%.
 Progettare un algoritmo che calcoli il costo dell'abbonamento a partire dalla durata,
-dal tipo e dalla prioritÃ .
+dal tipo e dalla priorità.
 */
 #include<iostream>
 using namespace std;
@@ -60,16 +60,16 @@ int main(){
         cin >> tipo;
     }
 
-    // prioritï¿½ desiderata
+    // priorita' desiderata
 
-    cout << "Inserire la priorita desiderata: A - Alta Priorita (consente di viaggiare nelle ore di punta) | B - Bassa priorita (non consente di viaggiare nelle ore di punta)" << endl;
+    cout << "Inserire la priorita desiderata: A - Alta Priorita' (consente di viaggiare nelle ore di punta) | B - Bassa priorita' (non consente di viaggiare nelle ore di punta)" << endl;
     cin >> priorita;
 
     // ciclo di controllo
 
     while(priorita != 'A' && priorita != 'B'){
 
-        cout << "Errore, si deve inserire: A - Alta Prioritï¿½ (consente di viaggiare nelle ore di punta) | B - Bassa prioritï¿½ (non consente di viaggiare nelle ore di punta)" << endl;
+        cout << "Errore, si deve inserire: A - Alta Priorita' (consente di viaggiare nelle ore di punta) | B - Bassa priorita' (non consente di viaggiare nelle ore di punta)" << endl;
         cin >> priorita;
     }
 
@@ -111,6 +111,6 @@ int main(){
         costoTot = costoTot - (costoTot / 5);
     }
 
-    cout << "Il costo dell'abbonamento richiesto e di " << costoTot;
+    cout << "Il costo dell'abbonamento richiesto e' di " << costoTot;
     return 0;
 }
