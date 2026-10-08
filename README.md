@@ -1,2 +1,4 @@
-# appunti_terza
-In questa repository ci sono tutti i file creati nei laboratori di informatica, sistemi e reti, telecomunicazioni e tecn. informatiche all'I.I.S. Castelli di Brescia. 3BI A.S. 2026/27
+In questa repository sono raccolti tutti i file e i progetti realizzati durante le attività di laboratorio delle materie di Informatica, Sistemi e Reti, Telecomunicazioni e Tecnologie Informatiche presso l’I.I.S. Castelli di Brescia.
+
+**Classe:** 3BI
+**Anno scolastico:** 2026/2027
