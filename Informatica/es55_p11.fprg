@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es55_p11"/>
+        <attribute name="authors" value="79345381"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-20 10:42:41 "/>
+        <attribute name="created" value="NzkzNDUzODE7SU5GTzA1UEMyMjsyMDI2LTEwLTIwOyIxMDowNjo0NCAiOzIyNTU="/>
+        <attribute name="edited" value="NzkzNDUzODE7SU5GTzA1UEMyMjsyMDI2LTEwLTIwOyIxMDo0Mjo0MSAiOzU7MjM2NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="media, redditoFamiliare" type="Real" array="False" size=""/>
+            <declare name="quotaFissa, quotaAgg1, quotaAgg2, quotaAgg3, scontoPerc, risultato" type="Real" array="False" size=""/>
+            <declare name="soglia1, soglia2, sogliaReddito" type="Real" array="False" size=""/>
+            <declare name="continuare" type="String" array="False" size=""/>
+            <declare name="contatore" type="Real" array="False" size=""/>
+            <assign variable="quotaFissa" expression="18.00"/>
+            <assign variable="quotaAgg1" expression="25.00"/>
+            <assign variable="quotaAgg2" expression="17.50"/>
+            <assign variable="quotaAgg3" expression="0.00"/>
+            <assign variable="scontoPerc" expression="40/100"/>
+            <assign variable="soglia1" expression="7"/>
+            <assign variable="soglia2" expression="8"/>
+            <assign variable="sogliaReddito" expression="16000.00"/>
+            <assign variable="contatore" expression="1"/>
+            <output expression="&quot;Vuoi procedere?: &quot;" newline="True"/>
+            <input variable="continuare"/>
+            <while expression="continuare == &quot;si&quot;">
+                <output expression="&quot;Cliente numero &quot; &amp; contatore" newline="True"/>
+                <output expression="&quot;Inserisci la media: &quot;" newline="True"/>
+                <input variable="media"/>
+                <output expression="&quot;Inserisci il reddito familiare: &quot;" newline="True"/>
+                <input variable="redditoFamiliare"/>
+                <assign variable="risultato" expression="quotaFissa"/>
+                <if expression="media &lt; soglia1">
+                    <then>
+                        <assign variable="risultato" expression="risultato + quotaAgg1"/>
+                    </then>
+                    <else>
+                        <if expression="media &lt; soglia2">
+                            <then>
+                                <assign variable="risultato" expression="risultato + quotaAgg2"/>
+                            </then>
+                            <else>
+                                <assign variable="risultato" expression="risultato + quotaAgg3"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <if expression="redditoFamiliare &lt; sogliaReddito">
+                    <then>
+                        <assign variable="risultato" expression="risultato * (1- scontoPerc)"/>
+                    </then>
+                    <else/>
+                </if>
+                <output expression="&quot;Importo per l'iscrizione: &quot; &amp; risultato &amp; &quot; euro&quot;" newline="True"/>
+                <output expression="&quot;Vuoi procedere?: &quot;" newline="True"/>
+                <input variable="continuare"/>
+                <assign variable="contatore" expression="contatore + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
