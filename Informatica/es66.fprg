@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es66"/>
+        <attribute name="authors" value="79345381"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-10-26 10:24:24 "/>
+        <attribute name="created" value="NzkzNDUzODE7SU5GTzA1UEMyMjsyMDI2LTEwLTI2OyIwOToyMjoxMiAiOzIyNjI="/>
+        <attribute name="edited" value="NzkzNDUzODE7SU5GTzA1UEMyMjsyMDI2LTEwLTI2OyIxMDoyNDoyNCAiOzI7MjM2OA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="partecipanti, soglia1, soglia2, gratuita, paganti, pullman, sogliaPullman, postiVuoti" type="Integer" array="False" size=""/>
+            <declare name="perc, costo" type="Real" array="False" size=""/>
+            <assign variable="soglia1" expression="15"/>
+            <assign variable="soglia2" expression="40"/>
+            <assign variable="perc" expression="0.10"/>
+            <assign variable="costo" expression="120.00"/>
+            <while expression="partecipanti &lt;= 0">
+                <output expression="&quot;Numero non valido deve essere &gt;0&quot;" newline="True"/>
+                <input variable="partecipanti"/>
+            </while>
+            <assign variable="gratuita" expression="partecipanti / soglia1"/>
+            <if expression="partecipanti &gt; soglia2">
+                <then>
+                    <assign variable="costo" expression="costo * (1 - perc)"/>
+                </then>
+                <else/>
+            </if>
+            <assign variable="sogliaPullman" expression="50"/>
+            <if expression="partecipanti % sogliaPullman == 0">
+                <then>
+                    <assign variable="pullman" expression="partecipanti / sogliaPullman"/>
+                </then>
+                <else>
+                    <assign variable="pullman" expression="partecipanti / sogliaPullman + 1"/>
+                </else>
+            </if>
+            <assign variable="postiVuoti" expression="pullmann * sogliaPullman - partecipanti"/>
+            <output expression="&quot;Numero Gratuita - &quot; &amp; gratuita" newline="True"/>
+            <output expression="&quot;Costo Totale - &quot; &amp; costo" newline="True"/>
+            <output expression="&quot;Pullman - &quot; &amp; pullman" newline="True"/>
+            <output expression="&quot;Posti vuoti - &quot; &amp; postiVuoti" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
